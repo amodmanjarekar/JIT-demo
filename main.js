@@ -13,7 +13,7 @@ const round_no = parseInt(process.argv[2]); // to store current round number (no
 const prev_res = process.argv[3]?.toString(); // to store opponent's response in the previous round
 
 // we shall store one past response & our current response in a file
-fs.readFile("./folder1/mytext", "utf8", (err, data) => {
+fs.readFile("./helpers/mytext", "utf8", (err, data) => {
   if (err) {
     console.error(err);
     return;
@@ -31,7 +31,7 @@ fs.readFile("./folder1/mytext", "utf8", (err, data) => {
   }
 
   // writing new responses to file
-  fs.writeFile("./folder1/mytext", `${prev_res}\n${my_res}`, () => {
+  fs.writeFile("./helpers/mytext", `${prev_res}\n${my_res}`, () => {
     if (err) {
       console.log(err);
       return;
